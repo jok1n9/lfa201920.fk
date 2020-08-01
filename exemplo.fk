@@ -1,0 +1,61 @@
+
+
+question p1;
+
+p1.val= 20 ;
+p1.quest = "  Será o mundo amarelo ?"	;
+p1.ans={"an1","an2","an3","an4"};
+show "perguntas:";
+show p1.quest;
+p1.ans.shuffle;
+show "respostas:";
+for( x ; p1.ans){
+    show p1.ans(x);
+}
+p1.wait String input;
+
+question p2	;
+
+p2.quest = from cultura difficulty 3 select ID1 ;
+p2.ans = from ID1 select answers;
+p2.val= 20 ;
+show p2.quest;
+show p2.val;
+for(y ; p2.ans){
+	show p2.ans(y);
+}
+p2.wait String input;
+if(p2){
+	show "Muito Bem sabes quem é o melhor do mundo";
+	question p3;
+	show p3.question;
+	p3.quest = from Astronomia difficulty 3 select ID4;
+	p3.ans= from ID4 select answers;
+	p3.val=10;
+	for(x ; p3.ans){
+		show p3.ans(x);
+	}
+	p3.wait String input;
+}
+
+tema = "cultura" ;
+question[3] a ;
+a[].quest = from tema difficulty 2 select ID3, ID5, ID6 ;
+a[0].ans = from ID3 select answers;
+a[1].ans = from ID5 select answers;
+a[2].ans = from ID6 select answers;
+create "RespostasQ";
+for(p ; a[]){
+	show a[p].quest;
+	for(x ; a[p].ans){
+		show a[p].ans(x);
+	}
+	a[p].val= 20 ;
+	a[p].wait String input ;
+	save a[p].user;
+	show a[p].user;
+}
+close "RespostasQ";
+	
+
+	

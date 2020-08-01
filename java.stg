@@ -1,0 +1,168 @@
+
+module(name,stat) ::= <<
+import java.util.*;
+import Json.*;
+import java.io.*;
+public class <name> {
+   public static void main(String[] args) throws IOException{
+      JSONreal jmain = new JSONreal("Json/Qbank.db");
+      <stats(stat)>
+   }     
+}
+class Question{
+    int val;
+    String id;
+    String quest;
+    String[] ans;
+    String user;
+}
+
+>>
+
+stats(stat) ::= <<
+<if(stat)><stat; separator="\n"><endif>
+>>
+
+//função show
+show(stat,value) ::= <<
+<stats(stat)>
+System.out.println(<value>);
+>>
+
+showans(stat,value, i) ::= <<
+<stats(stat)>
+System.out.println(<i>+"---->"+<value>);
+>>
+
+//função create
+create(stat, value) ::= <<
+<stats(stat)>
+FileWriter val = new FileWriter(<value>);
+PrintWriter quest = new PrintWriter(val);
+>>
+//funcao save
+save(stat, value) ::=<<
+<stats(stat)>
+quest.println(<value>);
+>>
+
+//funcao close
+close(stat, value) ::=<<
+<stats(stat)>
+val.close();
+>>
+
+//função for
+for1(stat, value, val) ::= <<
+for(int <val>=0; <val> \< <value>.length; <val>++){
+	<stats(stat)>
+}
+>>
+
+//função select
+
+
+//question
+
+questiondef(value) ::= <<
+Question <value> = new Question(); 
+>>
+
+//question array
+questionarr(value, var) ::= <<
+Question[] <value> = new Question[<var>];
+>>
+
+//string
+stringcall(val0, val1) ::= <<
+<val0>.<val1>
+>>
+
+stringcallans(value, val) ::= <<
+<value>[<val>]
+>>
+
+//def
+
+def(val0, val1) ::= <<
+<val0>=<val1>;
+>>
+
+//defstring
+
+defstring(val0, val1) ::= <<
+<val0>="<val1>";
+>>
+
+//load
+
+load(val0, val1) ::= <<
+<val0>=<val1>};
+>>
+
+//scan
+scan(val0, val1, val3, val4) ::= <<
+Scanner <val3> = new Scanner(System.in);
+System.out.print("Responder aqui --->");
+<val0> <val1> = <val3>.nextLine();
+System.out.println();
+<val4>.user= <val4>.ans[Integer.parseInt(<val1>)];
+>>
+
+defid(val, val0) ::= <<
+<val>.id="<val0>"
+>>
+
+//from
+
+from(val0, val1) ::= <<
+<val0>=jmain.<val1>;
+>>
+
+fromans(val0, val1) ::= <<
+<val0>=jmain.getAnswer("<val1>");
+>>
+
+//select
+
+select(val0) ::=<<
+getID("<val0>");
+>>
+
+shuffle(val0, val1) ::= <<
+List\<String> <val0> = Arrays.asList(<val1>);
+Collections.shuffle(<val0>);
+<val0>.toArray(<val1>);
+>>
+
+selectM(val, val1) ::= <<
+<val>=jmain.getID("<val1>");
+>>
+
+callrr1(val) ::= <<
+<val>
+>>
+
+callrr2(val,val0) ::= <<
+<val>[<val0>]
+>>
+
+defar(val0, val1) ::= <<
+<val0>[<val1>]= new Question();
+>>
+
+if(val, stat) ::= <<
+if( <val>.user.equals(jmain.getCorrect(<val>.id)) ){
+    <stats(stat)>
+}
+>>
+
+ifN(val, stat) ::= <<
+if( !(<val>.user.equals(jmain.getCorrect(<val>.id)))){
+    <stats(stat)>
+}
+>>
+
+else(stat) ::= <<
+   <stats(stat)>
+>>

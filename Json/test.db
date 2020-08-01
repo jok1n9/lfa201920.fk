@@ -1,0 +1,36 @@
+{
+	"Cultura":
+	{
+		"3":
+		{
+			ID1 - "Qual é o melhor youtuber português?":
+			{
+				"Tiagovski"=false,
+				"RicFazeres"=true,
+				"Kazzio"=false,
+				"FEROMONAS"=false
+			},
+			ID2 - "Melho pais do mundo?":
+			{
+				"Portugal"=true,
+				"Espanha"=false,
+				"Japao"=false,
+				"Irao"=false
+			}
+		}
+		
+	},
+	"Geografia":
+	{	
+		"1":
+		{
+			ID3 - "Capital de portugal":
+			{
+				"Madrid"=false,
+				"Franca"=false,
+				"Lisboa"=true,
+				"tokyo"=false
+			}
+		}
+	}
+}

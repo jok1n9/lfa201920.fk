@@ -1,0 +1,70 @@
+{
+	"Cultura":
+	{
+		"3":
+		{
+			ID1 - "Qual é o melhor youtuber português?":
+			{
+				"Tiagovski"=false,
+				"RicFazeres"=true,
+				"Kazzio"=false,
+				"FEROMONAS"=false
+			},
+			ID2 - "Melho pais do mundo?":
+			{
+				"Portugal"=true,
+				"Espanha"=false,
+				"Japao"=false,
+				"Irao"=false
+			}
+			
+		}
+		
+	},
+	"Geografia":
+	{	
+		"1":
+		{
+			ID3 - "Capital de portugal":
+			{
+				"Madrid"=false,
+				"Franca"=false,
+				"Lisboa"=true,
+				"tokyo"=false
+			}
+		}
+	},
+	"Astronomia":
+	{
+		"3":
+		{
+			ID4 - "Qual é a explosão mais violenta do universo?":
+			{
+				"Bomba de hidrogénio"=false,
+				"Supernova"=false,
+				"Bomba atómica"=false,
+				"Black Hole bomb"=true
+			},
+			ID5 - "Qual a distância da terra ao sistema solar mais próximo?":
+			{
+				"1.23 AU"=false,
+				"4.37 AU"=false,
+				"4.37 Anos luz"=true,
+				"1.23 Anos luz"=false
+			}
+		}
+	},
+	"Gaming":
+	{
+		"2":
+		{
+			ID6 - "Qual destes jogos não pertence ao franchise Assassins Creed?":
+			{
+				"AC Brotherhood"=false,
+				"AC War of Honnor"=true,
+				"AC Black Flag"=false,
+				"AC II"=false
+			}
+		}
+	}
+}
